@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html data-ng-app="signUpForm">
+    <head>
+        <title>Sign up</title>
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Bootstrap framework -->
+        <link href="framework/css/bootstrap.min.css" rel="stylesheet" />
+        
+        <style>
+            
+        
+        </style>
+        
+    
+    
+    </head>
+    <body data-ng-controller="myCtrl">
+        
+        <!-- !!! php action -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <form name="myForm" action="">
+
+                        <!-- Name row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-2">
+                                <!-- angSalution is the selected item -->
+                                <label for="csalutation">Salutation</label>
+                                    <select name="salutation" class="form-control" data-ng-model="angSalutation" id="csalutation">
+                                        <!-- salutationLists is initialized once loaded -->
+                                        <option ng-repeat="sal in salutationLists">{{sal}}</option>
+                                    </select>
+                                
+                            </div>
+
+                            <div class="form-group col-sm-5">
+                                <label for="angfirstname">First Name</label>
+                                <input type="text" name="firstname" id="cfirstname" class="form-control" data-ng-model="angFirstName"/>
+                                
+                            </div>
+
+                            <div class="form-group col-sm-5">
+                                <label for="anglastname">Last Name</label>
+                                <input type="text" name="lastname" id="clastname" class="form-control" data-ng-model="angLastName" /> 
+                                
+                            </div>
+                        </div>
+
+
+                        <!-- email row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                                <label for="cemail">Email</label>
+                                <input type="email" name="email" id="cemail" class="form-control" data-ng-model="angEmail" />
+                                
+                            </div>
+                        </div>
+
+                        <!-- password row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                                <label for="cfirstpassword">Password</label>
+                                <input type="password" name="password" id="cfirstpassword" class="form-control"/>
+                                
+                            </div>
+                        </div> 
+
+                        <!-- confirm password row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                                <label for="clastpassword">Confirm Password</label>
+                                <input type="password" name="cpassword" id="clastpassword" class="form-control"/>
+                                
+                            </div>
+                        </div>
+
+                        <!-- address row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-8">
+                                <label for="caddress">Address</label>
+                                <input type="text" name="address" id="caddress" class="form-control"/>
+                                
+                            </div>
+
+                            <div class="form-group col-sm-4">
+                                <label for="cpostcode">Postcode</label>
+                                <input type="number" name="postcode" id="cpostcode" class="form-control"/>
+                                
+                            </div>
+                        </div>
+
+                        <!-- City row -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <label for="ccity">City</label>
+                                <input type="text" name="city" id="ccity" class="form-control"/>
+                                
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label for="cstate">State</label>
+                                <select name="state" id="cstate" class="form-control">
+                                    <option value="Sarawak">Sarawak</option>
+                                    <option value="Johor">Johor</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <!-- submit button -->
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                            <input type="submit" value="submit" class="btn btn-primary my-1"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- column 2 -- confirmation list -->
+                <div class="col-sm-4">
+
+                    <h1>Confirmation</h1>
+
+                    <p>Name: {{angSalutation}} {{angFirstName}} {{angLastName}}</p>
+                    <p>Email: {{angEmail}}</p>
+                    <p>Address: </p>
+
+
+                </div>
+            </div>
+        </div> <!-- container ends -->
+        
+        
+        <script src="framework/js/jquery.min.js"></script>
+        <!-- All Bootstrap plug-ins file -->
+        <script src="framework/js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="framework/js/angular.min.js"></script>
+        <!-- My Controller -->
+        <script src="js/signup.js"></script>
+    
+    
+    </body>
+    
+    
+
+</html>
