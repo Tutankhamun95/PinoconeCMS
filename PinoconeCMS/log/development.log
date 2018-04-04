@@ -1,0 +1,312 @@
+Started GET "/" for 127.0.0.1 at 2018-04-04 16:05:15 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 328ms (Views: 39.9ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStaffs (20180404080627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "staffs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sid" integer, "sname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404080627"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCustomers (20180404080652)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cid" integer, "cname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404080652"]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFoods (20180404080756)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "foods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fid" integer, "fname" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404080756"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOrders (20180404080853)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oid" integer, "oname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404080853"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-04 08:09:37.721509"], ["updated_at", "2018-04-04 08:09:37.721509"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "staffs" ("sname", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["sname", "Eduardo"], ["created_at", "2018-04-04 08:22:27.795115"], ["updated_at", "2018-04-04 08:22:27.795115"]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO "customers" ("cname", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["cname", "Swinburne"], ["created_at", "2018-04-04 08:23:07.498319"], ["updated_at", "2018-04-04 08:23:07.498319"]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "foods" ("fname", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fname", "Magi Goreng Ayam"], ["price", 5], ["created_at", "2018-04-04 08:24:22.898585"], ["updated_at", "2018-04-04 08:24:22.898585"]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "staffs" ("sid", "sname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sid", 1], ["sname", "Eduardo"], ["created_at", "2018-04-04 08:41:02.234923"], ["updated_at", "2018-04-04 08:41:02.234923"]]
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "customers" ("cid", "cname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cid", 1], ["cname", "Swinburne"], ["created_at", "2018-04-04 08:42:08.059481"], ["updated_at", "2018-04-04 08:42:08.059481"]]
+  [1m[35m (21.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "foods" ("fid", "fname", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["fid", 1], ["fname", "Magi Goreng Ayam"], ["price", 5], ["created_at", "2018-04-04 08:47:17.313404"], ["updated_at", "2018-04-04 08:47:17.313404"]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.9ms)[0m  [1m[32mINSERT INTO "staffs" ("sname", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["sname", "Christopher"], ["created_at", "2018-04-04 08:49:20.539202"], ["updated_at", "2018-04-04 08:49:20.539202"]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStaff Load (2.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "staffs" ("sid", "sname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sid", 3], ["sname", "Ali"], ["created_at", "2018-04-04 09:00:33.174346"], ["updated_at", "2018-04-04 09:00:33.174346"]]
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mFood Load (0.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (29.1ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 1]]
+  [1m[36mStaff Load (2.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35mSQL (31.0ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 3]]
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.8ms)[0m  [1m[33mUPDATE "staffs" SET "id" = ?, "updated_at" = ? WHERE "staffs"."id" = ?[0m  [["id", 1], ["updated_at", "2018-04-04 09:15:58.315572"], ["id", 2]]
+  [1m[35m (25.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "staffs" SET "id" = ?, "updated_at" = ? WHERE "staffs"."id" = ?[0m  [["id", 1], ["updated_at", "2018-04-04 09:15:58.364499"], ["id", 4]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.1ms)[0m  [1m[33mUPDATE "staffs" SET "sid" = ?, "updated_at" = ? WHERE "staffs"."id" = ?[0m  [["sid", 2], ["updated_at", "2018-04-04 09:16:35.829152"], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "staffs" SET "sid" = ?, "updated_at" = ? WHERE "staffs"."id" = ?[0m  [["sid", 2], ["updated_at", "2018-04-04 09:16:35.874347"], ["id", 4]]
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", nil]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", nil]]
+  [1m[35mSQL (28.1ms)[0m  [1m[31mDELETE FROM "staffs" WHERE "staffs"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnLastNameToStaff (20180404091920)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "staffs" ADD "last_name" varchar[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404091920"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStaff Load (2.5ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameColumnToFirstName (20180404092354)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404092354"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStaff Load (2.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" ORDER BY "staffs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" ORDER BY "staffs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  [1m[33mUPDATE "staffs" SET "updated_at" = ?, "last_name" = ? WHERE "staffs"."id" = ?[0m  [["updated_at", "2018-04-04 09:32:09.717624"], ["last_name", "Baik"], ["id", 1]]
+  [1m[35m (28.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" ORDER BY "staffs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" ORDER BY "staffs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "staffs" ("sid", "sname", "created_at", "updated_at", "last_name") VALUES (?, ?, ?, ?, ?)[0m  [["sid", 6], ["sname", "Ali"], ["created_at", "2018-04-04 09:33:46.149767"], ["updated_at", "2018-04-04 09:33:46.149767"], ["last_name", "Elmahdi"]]
+  [1m[35m (22.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.8ms)[0m  [1m[33mUPDATE "staffs" SET "updated_at" = ?, "last_name" = ? WHERE "staffs"."id" = ?[0m  [["updated_at", "2018-04-04 09:34:48.415130"], ["last_name", "Zahran"], ["id", 5]]
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameColumnToFirstName (20180404092354)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180404092354"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameColumnToFirstName (20180404092354)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404092354"]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStaff Load (2.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mStaff Load (2.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mStaff Load (0.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.8ms)[0m  [1m[33mUPDATE "staffs" SET "sname" = ?, "updated_at" = ? WHERE "staffs"."id" = ?[0m  [["sname", "Martin"], ["updated_at", "2018-04-04 10:39:35.943467"], ["id", 1]]
+  [1m[35m (34.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStaff Load (3.0ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStaff Load (1.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mOrder Load (0.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnOrderByToOrder (20180404115742)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (8.1ms)[0m  [1m[35mALTER TABLE "orders" ADD "order_by" varchar[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404115742"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mOrder Load (4.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[36mStaff Load (2.0ms)[0m  [1m[34mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20180404121038)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_name" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3dad120da9"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20180404121038)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_name" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3dad120da9"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrderings (20180404121747)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "orderings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_name" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_f7f40e9dc6"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_orderings_on_customer_id" ON "orderings" ("customer_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404121747"]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orderings_on_customer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orderings_on_customer_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20180404122224)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20180404122418)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "order_name" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3dad120da9"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTalabs (20180404125931)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "talabs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "talab_name" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_46ace13934"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE  INDEX "index_talabs_on_customer_id" ON "talabs" ("customer_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180404125931"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orderings_on_customer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orderings_on_customer_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_talabs_on_customer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_talabs_on_customer_id' AND type='index'
+[0m
+  [1m[36mTalab Load (15.6ms)[0m  [1m[34mSELECT  "talabs".* FROM "talabs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs"[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "customers" ("cname", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["cname", "Ali"], ["created_at", "2018-04-04 13:03:42.681298"], ["updated_at", "2018-04-04 13:03:42.681298"]]
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "talabs" ("talab_name", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["talab_name", "10 pcs Magi Goreng"], ["customer_id", 3], ["created_at", "2018-04-04 13:05:24.861722"], ["updated_at", "2018-04-04 13:05:24.861722"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "talabs" ("talab_name", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["talab_name", "20 Pcs Nasi Ayam"], ["customer_id", 2], ["created_at", "2018-04-04 13:06:08.926167"], ["updated_at", "2018-04-04 13:06:08.926167"]]
+  [1m[35m (24.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs"[0m
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT  "talabs".* FROM "talabs" ORDER BY "talabs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs" WHERE "talabs"."customer_id" = ?[0m  [["customer_id", 1]]
+  [1m[36mTalab Load (0.5ms)[0m  [1m[34mSELECT  "talabs".* FROM "talabs" ORDER BY "talabs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs" WHERE "talabs"."customer_id" = ?[0m  [["customer_id", 1]]
+  [1m[36mTalab Load (0.0ms)[0m  [1m[34mSELECT "talabs".* FROM "talabs"[0m
+  [1m[36mCustomer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
