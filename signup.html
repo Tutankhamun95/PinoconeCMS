@@ -30,22 +30,22 @@
                             <div class="form-group col-sm-2">
                                 <!-- angSalution is the selected item -->
                                 <label for="csalutation">Salutation</label>
-                                    <select name="salutation" class="form-control" data-ng-model="angSalutation" id="csalutation">
+                                    <select name="salutation" id="csalutation" class="form-control" data-ng-model="angSalutation"  required>
                                         <!-- salutationLists is initialized once loaded -->
-                                        <option ng-repeat="sal in salutationLists">{{sal}}</option>
+                                        <option data-ng-repeat="sal in salutationLists">{{sal}}</option>
                                     </select>
                                 
                             </div>
 
                             <div class="form-group col-sm-5">
                                 <label for="angfirstname">First Name</label>
-                                <input type="text" name="firstname" id="cfirstname" class="form-control" data-ng-model="angFirstName"/>
+                                <input type="text" name="firstname" id="cfirstname" class="form-control" data-ng-model="angFirstName" required/>
                                 
                             </div>
 
                             <div class="form-group col-sm-5">
                                 <label for="anglastname">Last Name</label>
-                                <input type="text" name="lastname" id="clastname" class="form-control" data-ng-model="angLastName" /> 
+                                <input type="text" name="lastname" id="clastname" class="form-control" data-ng-model="angLastName" required /> 
                                 
                             </div>
                         </div>
@@ -55,17 +55,19 @@
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="cemail">Email</label>
-                                <input type="email" name="email" id="cemail" class="form-control" data-ng-model="angEmail" />
-                                
+                                <input type="email" name="email" id="cemail" class="form-control" data-ng-model="angEmail" required/>
+                                <span class="text-warning" ng-show="myForm.email.$touched && myForm.email.$invalid">Please enter a valid email</span>
                             </div>
+                            
+
                         </div>
 
                         <!-- password row -->
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="cfirstpassword">Password</label>
-                                <input type="password" name="password" id="cfirstpassword" class="form-control"/>
-                                
+                                <input type="password" name="password" id="cfirstpassword" class="form-control" data-ng-model="ang1Password" ng-minlength="8" required/>
+                                <span class="text-warning" ng-show="myForm.password.$touched &&  myForm.password.$error.minlength">Password must be at least 8 characters</span>
                             </div>
                         </div> 
 
@@ -73,22 +75,24 @@
                         <div class="form-row">
                             <div class="form-group col-sm-12">
                                 <label for="clastpassword">Confirm Password</label>
-                                <input type="password" name="cpassword" id="clastpassword" class="form-control"/>
-                                
+                                <input type="password" name="cpassword" id="clastpassword" class="form-control" data-ng-model="ang2Password" required/>
+                                <span class="text-warning" data-ng-if="ang1Password != ang2Password">Your password does not match</span>
                             </div>
+                            
+                            
                         </div>
 
                         <!-- address row -->
                         <div class="form-row">
                             <div class="form-group col-sm-8">
                                 <label for="caddress">Address</label>
-                                <input type="text" name="address" id="caddress" class="form-control"/>
+                                <input type="text" name="address" id="caddress" class="form-control" data-ng-model="angAddress1" required/>
                                 
                             </div>
 
                             <div class="form-group col-sm-4">
                                 <label for="cpostcode">Postcode</label>
-                                <input type="number" name="postcode" id="cpostcode" class="form-control"/>
+                                <input type="number" name="postcode" id="cpostcode" class="form-control" data-ng-model="angAddress2" required/>
                                 
                             </div>
                         </div>
@@ -97,15 +101,14 @@
                         <div class="form-row">
                             <div class="form-group col-sm-6">
                                 <label for="ccity">City</label>
-                                <input type="text" name="city" id="ccity" class="form-control"/>
+                                <input type="text" name="city" id="ccity" class="form-control" data-ng-model="angAddress3" required/>
                                 
                             </div>
 
                             <div class="form-group col-sm-6">
                                 <label for="cstate">State</label>
-                                <select name="state" id="cstate" class="form-control">
-                                    <option value="Sarawak">Sarawak</option>
-                                    <option value="Johor">Johor</option>
+                                <select name="state" id="cstate" class="form-control" data-ng-model="angStates" required>
+                                    <option data-ng-repeat="state in stateLists">{{state}}</option>
                                 </select>
                                 
                             </div>
@@ -114,7 +117,7 @@
                         <!-- submit button -->
                         <div class="form-row">
                             <div class="form-group col-sm-12">
-                            <input type="submit" value="submit" class="btn btn-primary my-1"/>
+                            <input type="submit" value="submit" class="btn btn-primary my-1" ng-disabled="myForm.$invalid"/>
                             </div>
                         </div>
                     </form>
@@ -127,7 +130,9 @@
 
                     <p>Name: {{angSalutation}} {{angFirstName}} {{angLastName}}</p>
                     <p>Email: {{angEmail}}</p>
-                    <p>Address: </p>
+                    <p>Address: {{angAddress1}} {{angAddress2}} {{angAddress3}}</p>
+                    <p>{{angStates}}</p>
+                    <p class="text-success" data-ng-if="myForm.$valid">If your infos are right. You're all good to go !</p>
 
 
                 </div>
