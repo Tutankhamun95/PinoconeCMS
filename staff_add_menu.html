@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+    <head>
+        <title>Customized food menu</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,
+                                       initial-scale=1.0" />
+        <!-- Bootstrap -->
+        <link href="framework/css/bootstrap.min.css" rel="stylesheet" /> <!-- HTML5 Shim and Respond.js IE8 support of HTML5
+        elements and media queries --> <!-- WARNING: Respond.js doesn't work if you view the
+                                       page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script> <script src="js/respond.min.js"></script>
+               <![endif]-->
+    </head>
+    <body data-ng-controller="myCtrl">
+        <h1>Customized food menu</h1>
+        
+        <div class="form-row">
+            <div class="form-group col-sm-8">
+                <label for="angName">Name</label>
+                <input type="text" name="firstname" id="angName" class="form-control" data-ng-model="angName" required/>
+                                
+            </div>
+            
+            
+            <div class="form-group col-sm-4">
+                <label for="angPrice">Price</label>
+                <input type="text" name="firstname" id="angPrice" class="form-control" data-ng-model="angPrice" required/>
+                                
+            </div>
+        
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-sm-12">
+                <label for="angDes">Description</label>
+                <input type="text" name="firstname" id="angDes" class="form-control" data-ng-model="angDes" required/>
+                                
+            </div>
+        
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-sm-12">
+            <input type="submit" value="submit" class="btn btn-primary my-1"/>
+            </div>
+        </div>
+        
+        
+        <table class="table">
+            
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr data-ng-repeat="menu in menus">
+                    <td>{{menu.code}}</td>
+                    <td>{{menu.name}}</td>
+                    <td>{{menu.description}}</td>
+                    <td>{{menu.price}}</td>
+                    <td><input type="button" value="DEL" class="class='btn btn-warning my-1'"/></td>
+                    <th>{{menu.date}}</th>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        
+        
+        <script src="framework/js/jquery.min.js"></script>
+        <!-- All Bootstrap plug-ins file -->
+        <script src="framework/js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="framework/js/angular.min.js"></script>
+        <!-- My Controller --> 
+        <script src="js/foodmenu.js"></script>
+    </body>
+</html>
