@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html data-ng-app="signUpForm">
+    <head>
+        <title>Customer Order</title>
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Bootstrap framework -->
+        <link href="framework/css/bootstrap.min.css" rel="stylesheet" />
+        
+        <style>
+          	   .border {
+                padding: 9px;
+                margin : 9px;
+				outline-style: outset;
+                outline-color: blue;
+                text-align: center;
+				o.text-align: center;
+				}
+			 
+			 .container {
+			  padding: 10px;
+                margin: 10px;
+                outline-style: outset;
+                outline-color: blue; }
+			#cust {
+				text-align:center;
+			}  
+        
+        </style>
+        
+    
+    
+    </head>
+    <body data-ng-controller="myCtrl"> 
+	<h2 id="cust"> Pinocone Online Catering System </h2>	
+        <!-- !!! php action -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+					<!-- Nav bar -->
+					<nav>
+						<div class ="row">
+							<div class ="col-sm-12">
+								<div>
+									<ul class ="nav navbar-nav">
+										<li class ="active"><a href="index.html">Home</a></li>
+										<li class ="dropdown">
+										<a href="customer_order.html" class = "dropdown-toggle" data-toggle="dropdown">Food Order<b class="caret"></b>
+										</a>
+											<ul class ="dropdown-menu">
+											<li><a href="CustomerOrder.html">Menu</a></li>
+											</ul>
+											</li>
+										<li><a href="Order.html">Orders</a></li>
+										<li><a href="login.html">Login</a></li> 
+									</ul>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+				
+				<!--Form -->
+				<div class="col-sm-12">
+					
+						<form name="myForm" action="">
+
+							<!-- Name row -->
+							<div class="form-row">
+								<div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Chinese</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angChinese"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Chinese">{{sal}}</option>
+										</select>
+									
+								</div>
+
+								<div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Malay</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angMalay"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Malay">{{sal}}</option>
+										</select>
+									
+								</div>
+								
+								 <div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Indian</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angIndian"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Indian">{{sal}}</option>
+										</select>
+									
+								</div>
+
+							   
+							</div>
+
+							<div class="form-row">
+								<div class="form-group col-sm-12">
+									<div class ="col-sm-6">
+										<input type="submit" value="submit" class="btn btn-primary my-1" ng-disabled="myForm.$invalid"/>
+									</div>
+									
+									<div class ="col-sm-6">
+										<input type="reset" value="clear" class="btn btn-primary my-1" ng-click="clearfunction" data-ng-model="clearSearch"/>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+						</form>
+					
+				</div>	
+            </div>
+
+                <!-- column 2 -- confirmation list -->
+                <div class="col-sm-4">
+
+                    <h3 id="cust">Order Confirmation</h3>
+
+                    <p>Order: {{angChinese}}, {{angMalay}}, {{angIndian}}</p>
+                    
+                    <p>{{angStates}}</p>
+                   <!-- <p class="text-success" data-ng-if="myForm.$valid">If your infos are right. You're all good to go !</p> -->
+
+
+                </div>
+            </div>
+        </div> <!-- container ends -->
+        
+        
+        <script src="framework/js/jquery.min.js"></script>
+        <!-- All Bootstrap plug-ins file -->
+        <script src="framework/js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="framework/js/angular.min.js"></script>
+        <!-- My Controller -->
+        <script src="js/CustomerOrder.js"></script>
+		<script src="frameworks/js/login.js"></script>
+    
+    
+    </body>
+    
+    
+
+</html>

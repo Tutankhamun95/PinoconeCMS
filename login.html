@@ -1,0 +1,115 @@
+<!--Madelin Pereira, 100075105 -->
+<!DOCTYPE html>
+<html data-ng-app ="myApp">
+   <head>
+        <title>Pinocone Online Catering System </title>
+        <meta name="viewport" content="width=device-width, initialscale=1.0"/> <!-- Bootstrap -->
+        <link href="framework/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script> <script src="js/respond.min.js"></script>
+             <![endif]-->
+	</head>
+			 <!--CSS style sheet-->
+			 	 <style>
+			   .border {
+                padding: 9px;
+                margin : 9px;
+				outline-style: outset;
+                outline-color: blue;
+                text-align: center;
+				o.text-align: center;
+				}
+			 
+			 .container {
+			  padding: 10px;
+                margin: 10px;
+                outline-style: outset;
+                outline-color: blue; }
+			#cust {
+				text-align:center;
+			}
+			 
+			 </style>
+	</head>
+<body data-ng-controller="myCtrl" >
+<h2 id="cust"> Pinocone Online Catering System </h2>
+	<div class ="container" ng-app="myApp">
+
+		<!-- Corporate banner -->
+		<div class ="row">
+			<div class ="col-sm-12">
+				<!-- Nav bar -->
+			<nav>
+				<div class ="row">
+					<div class ="col-sm-12">
+						<div>
+							<ul class ="nav navbar-nav" >
+								<li class ="active"><a href="index.html">Home</a></li>
+								<li class ="dropdown">
+								<a href="customer_order.html" class = "dropdown-toggle" data-toggle="dropdown">Food Order<b class="caret"></b>
+								</a>
+									<ul class ="dropdown-menu">
+									<li><a href="CustomerOrder.html">Menu</a></li>
+									</ul>
+									</li>
+								<li><a href="Order.html">Orders</a></li>
+								
+								<li><a href="login.html">Login</a></li>
+								<!-- <li><a href="sign_out.html">Sign Out</a></li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			</div>
+		</div>
+			
+		<!-- login -->	
+		<div class ="row">
+			<div class ="col-sm-12">
+					<!-- login -->
+					<div class="col-md-12">
+						<h3 id="cust">Login Page</h3>
+			
+						<form ng-submit="formSubmit()" class="form">
+						<div class="col-md-4">
+						  <div class="form-group">
+							<input type="text" class="form-control" ng-model="username" placeholder="username" required="" />
+						  </div>
+
+						  <div class="form-group">
+							<input type="password" class="form-control" ng-model="password" placeholder="password" required="" />
+						  </div>
+
+						  <div class="form-group">
+							<button type="submit" class="btn btn-success">Login</button>
+							<span class="text-danger"> </span>
+						  </div>
+
+						</div>
+					  </form>
+					</div>
+			</div>
+		</div>	
+		<!-- login -->
+	</div>	
+	
+        <script src="framework/js/jquery.min.js"></script>
+        <!-- All Bootstrap plug-ins file -->
+        <script src="framework/js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="framework/js/angular.min.js"></script>
+        <!-- My Controller -->
+        <script src="js/CustomerOrder.js"></script>
+		<script src="frameworks/js/login.js"></script>
+
+</body>
+</html>	
+	
+
+
+
+
+
+	
