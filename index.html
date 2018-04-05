@@ -27,20 +27,23 @@
                 margin: 10px;
                 outline-style: outset;
                 outline-color: blue; }
+			
+			#cust {
+				text-align:center;
+			}
 			 
 			 </style>
 	</head>
 <body>
+<h2 id="cust"> Pinocone Online Catering System </h2>
 	<div class ="container">
 
-		<!-- Corporate banner -->
+		<!-- Corporate banner
 		<div class ="row">
 			<div class ="col-sm-12">
-					<div class="border">
-					<p> Pinocone Online Catering System </p>
-					</div>
+					
 				</div>
-		</div>
+		</div> -->
 		<!-- Nav bar -->
 			<nav>
 				<div class ="row">
@@ -52,12 +55,11 @@
 								<a href="customer_order.html" class = "dropdown-toggle" data-toggle="dropdown">Food Order<b class="caret"></b>
 								</a>
 									<ul class ="dropdown-menu">
-									<li><a href="customized_food.html">Menu</a></li>
+									<li><a href="CustomerOrder.html">Menu</a></li>
 									</ul>
 									</li>
 								<li><a href="Order.html">Orders</a></li>
-								<button type = "button" class ="btn btn-default navbar-btn navbar-right">Sign Out</button>
-								<!-- <li><a href="sign_out.html">Sign Out</a></li> -->
+								<li><a href="login.html">Login</a></li> 
 							</ul>
 						</div>
 					</div>
@@ -176,12 +178,15 @@
 				</div>
 		</div>	
 			
-	</div>			 
-	<!-- jQuery – required for Bootstrap's JavaScript plugins) --> 
-	<script src="framework/js/jquery.min.js"></script>
-	<!-- All Bootstrap plug-ins file -->
-    <script src="framework/js/bootstrap.min.js"></script>
-	 <!-- Basic AngularJS -->
-    <script src="frameworks/js/angular.min.js"></script>
+	</div>		
+	 
+        <script src="framework/js/jquery.min.js"></script>
+        <!-- All Bootstrap plug-ins file -->
+        <script src="framework/js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="framework/js/angular.min.js"></script>
+        <!-- My Controller -->
+        <script src="js/CustomerOrder.js"></script>
+		<script src="frameworks/js/login.js"></script>
 </body>
 </html>
