@@ -9,6 +9,16 @@ app.controller("myCtrl", function ($scope)
 	$scope.Indian = ["Naan", "Butter Chicken", "Biryani"];
     
     $scope.clearSearch = function() { $scope.searchAll = null;}
+	
+	$scope.a = 0;
+	$scope.b = 0;
+	$scope.c = 0;
     
+	 $scope.remove = function(angChinese) {
+    	$scope.items.splice(angChinese, 1);
+    };
+	
+	
+	
 });
 
