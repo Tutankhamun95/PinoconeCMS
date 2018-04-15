@@ -1,5 +1,5 @@
 <?php
-	include ("test_server.php");
+	include ("server.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,58 +41,42 @@ div.jumbotron {
 </nav>
 
 <div class="jumbotron">
-	<h1 class="display-4">Create New Food Menu</h1>
+	<h1 class="display-4">Delete Food Menu</h1>
 </div>
 
 <div class="container">
 <div class="row">
 	<div class="col-sm-3">
 	<ul class="list-group">
-	  <li class="list-group-item"><strong>Create</strong> New Food Menu</li>
+	  <li class="list-group-item"><a href="staff_create_menu.php"><strong>Create</strong> New Food Menu</li></a>
+	  <li class="list-group-item"><a href="staff_delete_menu.php"><strong>Delete</strong> Food Menu</li></a>
 	</ul>
 	</div>
 
 	<div class="col-sm-9">
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-row">
-					<h2>Create a new Menu</h2>
+					<h2>Please select a menu to remove</h2>
 				</div>
 
-				<div class="form-row">
-					<div class="form-group col-sm-12">
-		                <label for="menu_name">Name</label>
-		                <input type="text" name="menu_name" id="menu_name" class="form-control" required/>
-		                                
-		            </div>
-	            </div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Price</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							displayMenusInTable();
+						?>
+						
 
-	            <div class="form-row">
-		            <div class="form-group col-sm-12">
-		                <label for="menu_description">Description</label>
-		                <textarea class="form-control" name="menu_description" id="menu_description" rows="3"></textarea>
-		                                
-		            </div>
-				</div>
-
-				<div class="form-row">
-					<div class="form-group col-sm-12">
-						<label for="menu_image">Poster</label>
-						<input class="form-control-file" type="file" name="menu_image" id="menu_image" />
-					</div>
-				</div>
-
-				<div class="form-row">
-					<div class="form-group col-sm-12">
-						<label for="menu_price">Price</label>
-						<input class="form-control" type="number" name="menu_price" id="menu_price" />
-					</div>
-				</div>
-
-				<div class="form-row">
-					<div class="form-group col-sm-12">
-						<input type="submit" name="add_food_menu" value="add" class="btn-success btn-lg" />
-					</div>
-				</div>
+					</tbody>
+				</table>
 			</form>		
 
 	</div>

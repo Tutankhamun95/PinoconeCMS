@@ -56,6 +56,38 @@ function displayMenus(){
 		}
 }
 
+function displayMenusInTable(){
+
+	global $con;
+
+	$get_menus = "select * from menu_item";
+
+	$run_menus = mysqli_query($con, $get_menus);
+
+	while ($row_menu = mysqli_fetch_array($run_menus))
+	{
+		$menu_id = $row_menu['menu_id'];
+
+		$menu_name = $row_menu['menu_name'];
+
+		$menu_description = $row_menu['menu_description'];
+
+		$menu_price = $row_menu['menu_price'];
+
+	echo "
+	<tr>
+		<td>$menu_id</td>
+		<td>$menu_name</td>
+		<td>$menu_description</td>
+		<td>$menu_price</td>
+		<td><button type='button' class='btn-md btn-danger'>Delete</button></td>
+	</tr>
+	";
+
+	}		
+
+}
+
 
 
 ?>

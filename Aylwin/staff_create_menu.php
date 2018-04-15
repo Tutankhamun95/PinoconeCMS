@@ -1,7 +1,6 @@
 <?php
-	include ("test_server.php");
+	include ("server.php");
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,38 +11,13 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<style type="text/css">
-	
-	div.jumbotron.food-jumbo {
+<style>
+div.jumbotron {
 
-		color:#fff;
 	    text-align:center;
-	    background:url('image/pic1.jpg');
-
-	    background-size:cover;
-	    background-position:center;
-	    padding-top:100px;
-	    padding-bottom:100px;
 	}
-
-	.layer {
-		background-color: rgba(0, 0, 0, 0.4);
-		padding: 32px;
-	}
-
-	.card-img-top {
-    width: 100%;
-    height: 18vw;
-    object-fit: cover;
-	}		
-
-	.card {
-		margin-bottom: 32px;
-		margin-top: 32px;
-	}
-
+	    
 </style>
-
 
 <title>Hello, world!</title>
 </head>
@@ -66,32 +40,66 @@
 	</ul>
 </nav>
 
-<div class="jumbotron food-jumbo">
-	<div class="layer">
-	<h1 class="display-4">Pinocone Online Catering System </h1>
-	<p class="lead">Offers the best foods in town. From Western cuisine to Malaysian's favourite dishes.</p>
-	
-	<p>Have a look now !</p>
-	<p class="lead">
-		<a class="btn btn-success btn-lg" href="#" role="button">Menu</a>
-	</p>
-</div>
+<div class="jumbotron">
+	<h1 class="display-4">Create New Food Menu</h1>
 </div>
 
 <div class="container">
-	<h1>Our Kitchen</h1>
-
-	
-	<div class="row">
-	<?php
-		displayMenus()
-		
-	?>
+<div class="row">
+	<div class="col-sm-3">
+	<ul class="list-group">
+	  <li class="list-group-item"><a href="staff_create_menu.php"><strong>Create</strong> New Food Menu</li></a>
+	  <li class="list-group-item"><a href="staff_delete_menu.php"><strong>Delete</strong> Food Menu</li></a>
+	</ul>
 	</div>
-	
-</div>
 
-	<!-- Optional JavaScript -->
+	<div class="col-sm-9">
+			<form action="" method="post" enctype="multipart/form-data">
+				<div class="form-row">
+					<h2>Create a new Menu</h2>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+		                <label for="menu_name">Name</label>
+		                <input type="text" name="menu_name" id="menu_name" class="form-control" required/>
+		                                
+		            </div>
+	            </div>
+
+	            <div class="form-row">
+		            <div class="form-group col-sm-12">
+		                <label for="menu_description">Description</label>
+		                <textarea class="form-control" name="menu_description" id="menu_description" rows="3"></textarea>
+		                                
+		            </div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+						<label for="menu_image">Poster</label>
+						<input class="form-control-file" type="file" name="menu_image" id="menu_image" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+						<label for="menu_price">Price</label>
+						<input class="form-control" type="number" name="menu_price" id="menu_price" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+						<input type="submit" name="add_food_menu" value="add" class="btn-success btn-lg" />
+					</div>
+				</div>
+			</form>		
+
+	</div>
+</div>
+</div>
+<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
