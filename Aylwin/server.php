@@ -80,7 +80,7 @@ function displayMenusInTable(){
 		<td>$menu_name</td>
 		<td>$menu_description</td>
 		<td>$menu_price</td>
-		<td><button type='button' class='btn-md btn-danger'>Delete</button></td>
+		<td><input type='submit' name='delete_food_menu' value='delete' class='btn-danger btn-sm' /></td>
 	</tr>
 	";
 
