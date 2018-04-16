@@ -14,8 +14,9 @@ app.controller("myCtrl", function ($scope)
 	$scope.b = 0;
 	$scope.c = 0;
     
-	 $scope.remove = function(angChinese) {
-    	$scope.items.splice(angChinese, 1);
+	 $scope.remove = function(index) {
+    	$scope.items.splice(index.remove, 1);
+		$scope.remove= null;
     };
 	
 	
