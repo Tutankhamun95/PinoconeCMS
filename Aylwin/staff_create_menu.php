@@ -23,13 +23,13 @@ div.jumbotron {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Pinocone</a>
+	<a class="navbar-brand" href="index.php">Pinocone</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
-			<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+			<a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
 			<a class="nav-item nav-link" href="#">Products</a>
 
 
@@ -48,8 +48,8 @@ div.jumbotron {
 <div class="row">
 	<div class="col-sm-3">
 	<ul class="list-group">
-	  <li class="list-group-item"><a href="staff_create_menu.php"><strong>Create</strong> New Food Menu</li></a>
-	  <li class="list-group-item"><a href="staff_delete_menu.php"><strong>Delete</strong> Food Menu</li></a>
+	  <li class="list-group-item"><a href="staff_create_menu.php"><strong>Create</strong> New Food Menu</a></li>
+	  <li class="list-group-item"><a href="staff_delete_menu.php"><strong>Delete</strong> Food Menu</a></li>
 	</ul>
 	</div>
 

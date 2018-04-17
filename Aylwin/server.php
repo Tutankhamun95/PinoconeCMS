@@ -4,7 +4,7 @@ $con = mysqli_connect("localhost", "root", "123456", "food");
 
 if (isset($_POST['add_food_menu'])){
 
-	$menu_name = $_POST['menu_name'];
+	(string) $menu_name = $_POST['menu_name'];
 
 	$menu_description = $_POST['menu_description'];
 
@@ -35,6 +35,8 @@ function displayMenus(){
 
 		while ($row_menu = mysqli_fetch_array($run_menus))
 		{
+			$menu_id = $row_menu['menu_id'];
+
 			$menu_name = $row_menu['menu_name'];
 
 			$menu_description = $row_menu['menu_description'];
@@ -48,7 +50,7 @@ function displayMenus(){
 				<div class='card-body'>
 					<h5 class='card-title'>$menu_name</h5>
 					<p class='card-text'>$menu_description</p>
-					<a href='#' class='btn btn-primary'>More Details</a>
+					<a href='#' type='submit' ></a>
 				</div>
 			</div>
 			</div>	
@@ -80,13 +82,23 @@ function displayMenusInTable(){
 		<td>$menu_name</td>
 		<td>$menu_description</td>
 		<td>$menu_price</td>
-		<td><input type='submit' name='delete_food_menu' value='delete' class='btn-danger btn-sm' /></td>
+		<td><a href='?del=$menu_id' class='btn btn-info btn-danger btn-sm' role='button'>DELETE</a></td>
 	</tr>
 	";
 
 	}		
 
 }
+
+if (isset($_GET['del'])){
+	$menu_id = $_GET['del'];
+
+	$delete_menu = "DELETE FROM menu_item WHERE menu_id ='$menu_id'";
+
+	mysqli_query($con, $delete_menu);
+}
+
+
 
 
 
