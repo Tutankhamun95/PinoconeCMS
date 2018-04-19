@@ -55,7 +55,7 @@ else{
       <form method="post" action="routers/router.php" class="login-form" id="form">
         <div class="row">
           <div class="input-field col s12 center">
-            <p class="center login-form-text">Login to PinoconeCMS</p>
+            <h1 class="center">Welcome to Pinocone</h1>
           </div>
         </div>
         <div class="row margin">
