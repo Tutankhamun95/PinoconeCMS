@@ -165,7 +165,9 @@ include 'includes/wallet.php';
                     </ul>
                 </li>					
             <li class="bold"><a href="details.php" class="waves-effect waves-cyan"><i class="mdi-social-person"></i> Edit Details</a>
-            </li>				
+            </li>
+			<li class="bold"><a href="feedback.php" class="waves-effect waves-cyan"><i class="mdi-action-info-outline"></i> Feedback</a>
+            </li>
         </ul>
         <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
         </aside>
