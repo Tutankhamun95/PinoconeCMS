@@ -1,9 +1,42 @@
+<!-- 
+  Created by: Aylwin
+  Last Updated: 02 May 2018 10:25PM (Sprint 2 Day 3)
+  Last Description: Feedbacks can be stored in DB
+-->
+
 <?php
 include 'includes/connect.php';
 include 'includes/wallet.php';
 
 	if($_SESSION['customer_sid']==session_id())
 	{
+    if (isset($_POST['create_feedback'])){
+
+      $feedback_name = $_POST['name'];
+
+      $feedback_subject = $_POST['subject'];
+
+      $types_array = $_POST['types'];
+
+      $maxTypes = count($types_array);
+
+      for($i=0; $i < $maxTypes; $i++)
+
+      {
+
+      $feedback_type = $types_array[$i];
+
+      }
+
+
+      $feedback_comment = $_POST['comment'];
+
+
+      $insert_feedback = "INSERT INTO feedback(name, subject, type, comment) VALUES ('$feedback_name', '$feedback_subject', '$feedback_type', '$feedback_comment')";
+
+      mysqli_query($con, $insert_feedback) or die (mysqli_error($con));
+
+    }
 		?>
 <!DOCTYPE html>
 <html lang="en">
@@ -204,7 +237,7 @@ include 'includes/wallet.php';
 		<div class="form-group row">
 			<label for="username" class="col-2">Username: </label>
 			<div class="col-8">
-				<input type="text" name="username" id="username" class="form-control" />
+				<input type="text" name="name" id="username" class="form-control" />
 			</div>
 		</div>
 
@@ -216,11 +249,11 @@ include 'includes/wallet.php';
 		</div>
 
 		<div class="form-group row">
-			<label for="service_type" class="col-2">Service Type: </label>
+			<label for="feedback_type" class="col-2">Service Type: </label>
 			<div class="col-8">
-				<select id="service_type" name="service_type" class="form-control">
-					<option value="food quality">food quality</option>
-					<option value="service quality">service quality</option>
+				<select id="feedback_type" name="types[]" class="form-control">
+					<option value="1">food quality</option>
+					<option value="2">service quality</option>
 				</select>
 			</div>
 		</div>
@@ -234,7 +267,7 @@ include 'includes/wallet.php';
 		
 				
 		<div class="form-group row">
-		  <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit<i class="mdi-content-send right"></i>
+		  <button class="btn cyan waves-effect waves-light right" type="submit" name="create_feedback">Submit<i class="mdi-content-send right"></i>
 		  </button>
 		</div>
 
