@@ -185,6 +185,38 @@ include 'includes/wallet.php';
 						<form action="test.php" method="post" id="coupon_form">
 						
 						
+							<!-- Name row -->
+							<div class="form-row">
+								<div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Chinese</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angChinese"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Chinese">{{sal}}</option>
+										</select>
+									
+								</div>
+
+								<div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Malay</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angMalay"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Malay">{{sal}}</option>
+										</select>
+									
+								</div>
+								
+								 <div class="form-group col-sm-4">
+									<!-- angSalution is the selected item -->
+									<label for="csalutation">Indian</label>
+										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angIndian"  required>
+											<!-- salutationLists is initialized once loaded -->
+											<option data-ng-repeat="sal in Indian">{{sal}}</option>
+										</select>
+								</div>
+
+							</div>
 						
 						
 						
@@ -192,33 +224,8 @@ include 'includes/wallet.php';
 					</div>
 			</div>						
 	</div>
-<?php
-	function createRandomPassword() {
-	$chars = "abcdefghijkmnopqrstuvwxyz023456789";
-    srand((double)microtime()*1000000);
-    $i = 0;
-    $pass = '' ;
-    while ($i <= 9) {
-        $num = rand() % 33;
-        $tmp = substr($chars, $num, 1);
-        $pass = $pass . $tmp;
-        $i++;
-    }
-    return $pass;
-}
 
-$emailErr ="";
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-  }
-	echo "<h2>Your Input:</h2>";
-	echo $email;
-	echo "<br>";
-	echo $generator;
-	echo "<br>";
-?>
+	
 	
  <!-- START FOOTER -->
   <footer class="page-footer">
