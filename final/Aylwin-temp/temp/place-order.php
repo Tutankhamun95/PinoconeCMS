@@ -1,3 +1,9 @@
+<!-- 
+  Created by: Aylwin
+  Last Updated: 07 May 2018 11:05PM (Sprint 2 Day 6)
+  Last Description: Adding promo input before checkout
+-->
+
 <?php
 include 'includes/connect.php';
 include 'includes/wallet.php';
@@ -326,7 +332,19 @@ $verified = $row['verified'];
 		$total = $total + $price;
 	}
 	}
-    echo '<li class="collection-item">
+    echo '
+    <li class="collection-item">
+    <div class="row">
+      <div class="col s10">
+      <span>&nbsp;</span>
+      </div>
+      <div class="col s2">
+      <input type="text" placeholder="promo code" />
+      </div>
+    </div>
+    </li>
+
+    <li class="collection-item">
         <div class="row">
             <div class="col s7">
                 <p class="collections-title"> Total</p>
@@ -338,7 +356,8 @@ $verified = $row['verified'];
                 <span><strong>RM '.$total.'</strong></span>
             </div>
         </div>
-    </li>';
+    </li>
+    ';
 		if(!empty($_POST['description']))
 		echo '<li class="collection-item avatar"><p><strong>Note: </strong>'.htmlspecialchars($_POST['description']).'</p></li>';
 ?>
