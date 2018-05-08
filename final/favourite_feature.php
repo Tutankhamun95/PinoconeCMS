@@ -4,8 +4,7 @@ include 'includes/wallet.php';
 
 	if($_SESSION['customer_sid']==session_id())
 	{
-		?>
-		
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +13,7 @@ include 'includes/wallet.php';
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
-  <title>Promotion</title>
+  <title>Order Food</title>
 
   <!-- CORE CSS-->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -23,6 +22,9 @@ include 'includes/wallet.php';
   <link href="css/custom/custom.min.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+	
+	
+	<!-- Bootstrap CSS -->
   
    <style type="text/css">
   .input-field div.error{
@@ -65,21 +67,44 @@ include 'includes/wallet.php';
   .right-alert textarea.materialize-textarea + label:after{
       right:70px;
   }
+  
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card .card-body {
+  min-width: 220px;
+}
+
+.border-top .card-body{ border-top: 1px solid #e5e5e5; }
+.border-bottom .card-body { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow .card-body{ box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
   </style> 
 </head>
 
-<body>
-  <!-- Start Page Loading -->
-  <div id="loader-wrapper">
+<body >
+	<div id="loader-wrapper">
       <div id="loader"></div>        
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
   </div>
   <!-- End Page Loading -->
 
-  <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-  <!-- START HEADER -->
+<!-- START HEADER -->
   <header id="header" class="page-topbar">
         <!-- start header nav-->
         <div class="navbar-fixed">
@@ -127,7 +152,7 @@ include 'includes/wallet.php';
             </li>
             <li class="bold active"><a href="index.php" class="waves-effect waves-cyan"><i class="mdi-editor-border-color"></i>Food Items</a>
             </li>
-			 <li class="bold active"><a href="promotion-mad.php" class="waves-effect waves-cyan"><i class="mdi-editor-border-color"></i>Coupon Code</a>
+			<li class="bold active"><a href="food popularity.php" class="waves-effect waves-cyan"><i class="mdi-editor-border-color"></i>Order</a>
             </li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
@@ -169,40 +194,59 @@ include 'includes/wallet.php';
                 </li>					
             <li class="bold"><a href="details.php" class="waves-effect waves-cyan"><i class="mdi-social-person"></i> Edit Details</a>
             </li>
-			<li class="bold"><a href="feedback.php" class="waves-effect waves-cyan"><i class="mdi-action-info-outline"></i> Feedback</a>
+			<li class="bold"><a href="details.php" class="waves-effect waves-cyan"><i class="mdi-action-info-outline"></i> Feedback</a>
             </li>
         </ul>
         <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
         </aside>
+		
+	  </div>
+	
       <!-- END LEFT SIDEBAR NAV-->
 
-      <!-- //////////////////////////////////////////////////////////////////////////// -->
 		
-	<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h4>Coupon Code </h4>
-						<form action="promotion-mad.php" method="post" id="coupon_form">
-							<div class ="col-md-12">
-							E-mail: <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"><br>
-							<span class="error">* Email is required </span>
-							<br><br>
+		<div class="container"  data-ng-app ="signUpForm" data-ng-controller ="myCtrl">
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Food Order</h4>
+							<div class="col-sm-12">
+								<form action="foodpopularity.php" method="post" id="coupon_form">
+									 <div class="card-body">
+										<p class="card-title pricing-card-title"> Favourite Menu 1</p>
+											<ul class="list-unstyled mt-3 mb-4">
+											<li>10 users included</li>
+											<li>Help center access</li>
+											</ul>
+											<button type="button" class="btn btn-lg btn-block btn-outline-primary">Add to Cart</button>
+									</div>
+									
+									 <div class="card-body">
+										<p class="card-title pricing-card-title"> Favourite Menu 1</p>
+											<ul class="list-unstyled mt-3 mb-4">
+											<li>10 users included</li>
+											<li>Help center access</li>
+											</ul>
+											<button type="button" class="btn btn-lg btn-block btn-outline-primary">Add to Cart</button>
+									</div>
+									
+									 <div class="card-body">
+										<p class="card-title pricing-card-title"> Favourite Menu 1</p>
+											<ul class="list-unstyled mt-3 mb-4">
+											<li>10 users included</li>
+											<li>Help center access</li>
+											</ul>
+											<button type="button" class="btn btn-lg btn-block btn-outline-primary">Add to Cart</button>
+									</div>
+									
+								</form>
 							</div>
-							<h4> Enter a promo code </h4>
-							<input type="text" name="promo" pattern="[a-zA-Z0-9]{4}"><br>
-							
-							<div class="col-md-offset-8 col-md-4">
-							<button type="submit" onclick="submit()" name= "generator" class="btn btn-success pull-right">Submit</button>
-								<br/><br/>
-							</div>
-						</form>
+					</div>
 				</div>
-			</div>
-	</div>
-	
-<!-- //////////////////////////////////////////////////////////////////////////// -->
+		</div>
 
-  <!-- START FOOTER -->
+	
+	
+ <!-- START FOOTER -->
   <footer class="page-footer">
     <div class="footer-copyright">
       
@@ -212,9 +256,12 @@ include 'includes/wallet.php';
 
 
 
+
     <!-- ================================================
     Scripts
     ================================================ -->
+	
+   
     
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>    
@@ -223,57 +270,13 @@ include 'includes/wallet.php';
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!--scrollbar-->
-    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <!-- data-tables -->
-    <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
-	
-    <script type="text/javascript" src="js/plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/plugins/jquery-validation/additional-methods.min.js"></script>
-    
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>       
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.min.js"></script>
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="js/custom-script.js"></script>
-    <script type="text/javascript">
-    $("#formValidate").validate({
-        rules: {
-			<?php
-			$result = mysqli_query($con, "SELECT * FROM food_item where not deleted;");
-			while($row = mysqli_fetch_array($result))
-			{
-				echo $row["id"].':{
-				min: 0,
-				max: 10
-				},
-				';
-			}
-		echo '},';
-		?>
-        messages: {
-			<?php
-			$result = mysqli_query($con, "SELECT * FROM food_item where not deleted;");
-			while($row = mysqli_fetch_array($result))
-			{  
-				echo $row["id"].':{
-				min: "Minimum 0",
-				max: "Maximum 10"
-				},
-				';
-			}
-		echo '},';
-		?>
-        errorElement : 'div',
-        errorPlacement: function(error, element) {
-          var placement = $(element).data('error');
-          if (placement) {
-            $(placement).append(error)
-          } else {
-            error.insertAfter(element);
-          }
-        }
-     });
-    </script>
+	<script src="js/CustomerOrder.js"></script>
+	
 </body>
 
 </html>
@@ -283,7 +286,7 @@ include 'includes/wallet.php';
 	{
 		if($_SESSION['admin_sid']==session_id())
 		{
-			header("location:admin-page.php");		
+			header("location:all-orders.php");		
 		}
 		else{
 			header("location:login.php");

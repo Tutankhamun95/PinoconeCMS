@@ -4,7 +4,7 @@ include 'includes/wallet.php';
 
 	if($_SESSION['customer_sid']==session_id())
 	{
-		?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +25,6 @@ include 'includes/wallet.php';
 	
 	
 	<!-- Bootstrap CSS -->
-
   
    <style type="text/css">
   .input-field div.error{
@@ -71,7 +70,7 @@ include 'includes/wallet.php';
   </style> 
 </head>
 
-<body>
+<body >
 	<div id="loader-wrapper">
       <div id="loader"></div>        
       <div class="loader-section section-left"></div>
@@ -127,6 +126,8 @@ include 'includes/wallet.php';
             </li>
             <li class="bold active"><a href="index.php" class="waves-effect waves-cyan"><i class="mdi-editor-border-color"></i>Food Items</a>
             </li>
+			<li class="bold active"><a href="food popularity.php" class="waves-effect waves-cyan"><i class="mdi-editor-border-color"></i>Order</a>
+            </li>
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Orders</a>
@@ -178,52 +179,98 @@ include 'includes/wallet.php';
       <!-- END LEFT SIDEBAR NAV-->
 
 		
-	<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h2>Food popularity</h2>
-						<form action="test.php" method="post" id="coupon_form">
-						
-						
-							<!-- Name row -->
-							<div class="form-row">
-								<div class="form-group col-sm-4">
-									<!-- angSalution is the selected item -->
-									<label for="csalutation">Chinese</label>
-										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angChinese"  required>
-											<!-- salutationLists is initialized once loaded -->
-											<option data-ng-repeat="sal in Chinese">{{sal}}</option>
-										</select>
-									
-								</div>
+		<div class="container"  data-ng-app ="signUpForm" data-ng-controller ="myCtrl">
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Food Order</h4>
+							<div class="col-sm-12">
+								<form action="foodpopularity.php" method="post" id="coupon_form">
 
-								<div class="form-group col-sm-4">
-									<!-- angSalution is the selected item -->
-									<label for="csalutation">Malay</label>
-										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angMalay"  required>
-											<!-- salutationLists is initialized once loaded -->
-											<option data-ng-repeat="sal in Malay">{{sal}}</option>
-										</select>
-									
-								</div>
-								
-								 <div class="form-group col-sm-4">
-									<!-- angSalution is the selected item -->
-									<label for="csalutation">Indian</label>
-										<select name="salutation" id="csalutation" class="form-control" data-ng-model="angIndian"  required>
-											<!-- salutationLists is initialized once loaded -->
-											<option data-ng-repeat="sal in Indian">{{sal}}</option>
-										</select>
-								</div>
+									<!-- Name row -->
+									<div class="form-row">
+										<div class="form-group col-sm-4">
+											<!-- angSalution is the selected item -->
+											<label for="csalutation">Chinese</label>
+												<select name="salutation" id="csalutation" class="form-control" data-ng-model="angChinese"  required>
+													<!-- salutationLists is initialized once loaded -->
+													<option data-ng-repeat="sal in Chinese">{{sal}}</option>
+												</select>
+											
+										</div>
 
+										<div class="form-group col-sm-4">
+											<!-- angSalution is the selected item -->
+											<label for="csalutation">Malay</label>
+												<select name="salutation" id="csalutation" class="form-control" data-ng-model="angMalay"  required>
+													<!-- salutationLists is initialized once loaded -->
+													<option data-ng-repeat="sal in Malay">{{sal}}</option>
+												</select>
+											
+										</div>
+										
+										 <div class="form-group col-sm-4">
+											<!-- angSalution is the selected item -->
+											<label for="csalutation">Indian</label>
+												<select name="salutation" id="csalutation" class="form-control" data-ng-model="angIndian"  required>
+													<!-- salutationLists is initialized once loaded -->
+													<option data-ng-repeat="sal in Indian">{{sal}}</option>
+												</select>
+										</div>
+
+									</div>
+
+								</form>
 							</div>
-						
-						
-						
-						</form>
-					</div>
-			</div>						
-	</div>
+					</div>	
+				</div>		
+
+					<div class="col-sm-12">
+						<div class ="row">
+							<div class="col-sm-6">
+							<h4>Order: </h4>
+
+							{{angChinese}} <button type="button" class="btn btn-info btn-sm"  ng-click ="a=a+1">Add</button> <button type="button" class="btn btn-info btn-sm"   ng-click ="a=a-1">Delete</button><p>Quantity:{{a}}</p><br>
+							{{angMalay}} <button  type="button" class="btn btn-info btn-sm" ng-click ="b=b+1">Add</button> <button type="button" class="btn btn-info btn-sm"   ng-click ="b=b-1">Delete</button><p>Quantity:{{b}}</p> <br> 
+							{{angIndian}} <button  type="button" class="btn btn-info btn-sm" ng-click ="c=c+1">Add</button> <button type="button" class="btn btn-info btn-sm"   ng-click ="c=c-1">Delete</button><p>Quantity:{{c}}</p> <br>						
+							</p>
+						   <!-- <p class="text-success" data-ng-if="myForm.$valid">If your infos are right. You're all good to go !</p> -->
+								<div class="form-row">
+									<div class="form-group col-sm-12">
+										<div class ="col-sm-6">
+											  <!-- Trigger the modal with a button -->
+											<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Confirm order</button>
+												<!-- Modal -->
+											<div class="modal fade" id="myModal" role="dialog">
+												<div class="modal-dialog">
+														<!-- Modal content-->
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+															<h4 class="modal-title">Order Confirmation</h4>
+														</div>
+													<div class="modal-body">
+														
+																{{angChinese}},{{a}} <button ng-click="remove($item)" onclick="return confirm('Are you sure you want to delete this item?')">Remove</button><br> 
+																{{angMalay}},{{b}}	<button ng-click="remove()" onclick="return confirm('Are you sure you want to delete this item?')">Remove</button><br>
+																{{angIndian}} {{c}}	<button ng-click="remove()" onclick="return confirm('Are you sure you want to delete this item?')">Remove</button><br>
+														
+															
+													</div>
+												<div class="modal-footer">
+													<input type="submit" value="submit" class="btn btn-primary my-1" ng-disabled="myForm.$invalid"/>
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<!-- Modal -->
+							</div>
+						</div>
+					</div>	
+			</div>
 
 	
 	
@@ -254,7 +301,7 @@ include 'includes/wallet.php';
     <script type="text/javascript" src="js/plugins.min.js"></script>
     <!--custom-script.js - Add your own theme custom JS-->
     <script type="text/javascript" src="js/custom-script.js"></script>
-	
+	<script src="js/CustomerOrder.js"></script>
 	
 </body>
 
