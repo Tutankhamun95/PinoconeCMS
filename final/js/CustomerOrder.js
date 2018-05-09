@@ -1,25 +1,44 @@
-var app = angular.module("signUpForm", []);
+var app = angular.module('signUpForm', []);
 
-app.controller("myCtrl", function ($scope) 
-{
-    $scope.Chinese = ["Dumplings", "Spring Roll", "Cho Mein"];
+app.controller('myCtrl', function($scope) {
+   $scope.Malay = [
+        {Product:"Nasi Lemak", Price: 10.99},
+        {Product:"Chicken Rendang", Price: 6.50},
+        {Product:"Curry Laksa", Price: 9.99},
+        
+    ];
 	
-	$scope.Malay = ["Nasi Lemak", "Chicken Rendang", "Laksa Johor"];
-    
-	$scope.Indian = ["Naan", "Butter Chicken", "Biryani"];
-    
-    $scope.clearSearch = function() { $scope.searchAll = null;}
+	$scope.Chinese = [
+        {Product:"Cho Mein ", Price: 10.99},
+        {Product:"Spring Roll ", Price: 6.50},
+        {Product:"Dumplings ", Price: 9.99},
+        
+    ];
 	
-	$scope.a = 0;
-	$scope.b = 0;
-	$scope.c = 0;
-    
-	 $scope.remove = function(index) {
-    	$scope.items.splice(index.remove, 1);
-		$scope.remove= null;
+	$scope.Indian = [
+        {Product:"Biryani", Price: 10.99},
+        {Product:"Chicken Masala", Price: 6.50},
+        {Product:"Butter Chicken", Price: 9.99},
+        
+    ];
+	
+    $scope.editing = false;
+    $scope.addItem = function(item) {
+        $scope.items.push(item);
+        $scope.item = {};
     };
+    
+    $scope.myCartItems = [];
+    
+    $scope.addToCart = function(item)
+    {
+      $scope.myCartItems.push(item);
+    }
 	
-	
+	 $scope.DeleteToCart = function(item)
+    {
+      $scope.myCartItems.splice(item-1, 1);
+    }
 	
 });
 
