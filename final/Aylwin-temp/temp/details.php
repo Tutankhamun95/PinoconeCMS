@@ -252,7 +252,7 @@ $username = $row['username'];
                         <div class="row" style="padding: 16px;">
 
                           <div class="input-field col s3">
-                            <button formnovalidate class="btn red accent-4 waves-effect waves-light right" type="submit" name="delete_forever">Delete Account
+                            <button formnovalidate class="btn red accent-4 waves-effect waves-light right" type="submit" name="delete_forever" onclick="return confirm('Are you sure you want to DELETE this account? This action cannot be undone');">Delete Account
                               <i class="mdi-action-delete right"></i>
                           </button>
                         
